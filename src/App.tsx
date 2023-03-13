@@ -52,7 +52,7 @@ function App() {
       </div>
       <footer>
         <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-        <p>Template deployed by Chihiro & Justin Snider @2023</p>
+        <p className='read-the-docs'>Template deployed by Chihiro & Justin Snider @2023</p>
       </footer>
     </div>
   );

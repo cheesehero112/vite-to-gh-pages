@@ -1,6 +1,5 @@
 {
   "name": "vite-to-gh-pages",
-  "homepage": "https://cheesehero112.github.io/vite-to-gh-pages/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
