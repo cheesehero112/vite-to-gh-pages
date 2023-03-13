@@ -41,7 +41,7 @@ function App() {
       </section>
       <section className='medium-article'>
         <h3>Learn how to deploy this site: </h3>
-        <a src=''>Medium Article by Chihiro & Justin</a>
+        <a>Medium Article by Chihiro & Justin</a>
       </section>
 
       <div className='card'>
