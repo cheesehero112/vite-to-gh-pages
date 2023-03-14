@@ -4,7 +4,7 @@
 
 In this repo, we explain how to deploy a Vite React application created with a CICD pipeline. [A Medium article](https://chihiro-and-justin.medium.com/deploy-a-react-vite-app-using-github-actions-and-github-pages-a370df30da97) is also available.
 
-The website is deployed on GitHub pages.
+The [website](https://cheesehero112.github.io/vite-to-gh-pages/) is deployed on GitHub pages.
 
 All changes pushed to main branch will automatically be built and deployed using GitHub Actions.
 
