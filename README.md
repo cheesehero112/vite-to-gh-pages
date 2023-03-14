@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this repo, we explain how to deploy a Vite React application created with CICD pipeline.
+In this repo, we explain how to deploy a Vite React application created with a CICD pipeline. [A Medium article](https://chihiro-and-justin.medium.com/deploy-a-react-vite-app-using-github-actions-and-github-pages-a370df30da97) is also available.
 
 The website is deployed on GitHub pages.
 
@@ -30,23 +30,21 @@ git init
 git add .
 git commit -m "first-commit"
 git branch -M main
-git remote add origin https://github.com/username/ssd-app.git
+git remote add origin https://github.com/username/vite-to-gh-pages.git
 git push -u origin main
 ```
-
-
 
 4. Update vite.config.js to include our repo name:
 
 ```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-base: '/ssd-app/',
-plugins: [react()],
-})
+  base: '/vite-to-gh-pages/',
+  plugins: [react()],
+});
 ```
 
 5. Run npm run build in your terminal.
@@ -56,9 +54,9 @@ plugins: [react()],
 9. Navigate to your GH Pages live page to verify your site is live.
 
 ### 3) Setup GitHub Actions to rebuild your site on commit to main
+
 1. To allow GitHub action to update our build go to your repo Settings > Actions > General > Workflow permisions to select Read and write permissions. Our change will allow the action to update the build in the gh-pages branch with each push.
-2. Add "homepage": "/ssd-app", to the package.json file. The build will be configured for URL user.github.io/ssd-app, which is what GitHub pages will expect.
-3. Add .github/workflows/node.js.yml the root project folder. Populate the file with the following text:
+2. Add .github/workflows/node.js.yml the root project folder. Populate the file with the following text:
 
 ```yaml
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
@@ -77,15 +75,15 @@ jobs:
 build:
 
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
       - run: npm install
@@ -97,28 +95,21 @@ build:
           publish_dir: ./dist
 ```
 
-
-
 4. Make a visible change to the web app you can use to verify the update.
 5. Run `git add .`
 6. Run `git commit -m "add GH Action"`
 7. Open your GH Pages web app to veriy your change has been made.
 
-
-
 ## References
 
-* [GH Pages Docs](https://docs.github.com/en/pages/getting-started-with-github-pages)
-* [Vite Docs](https://vitejs.dev/guide/)
-* [GH Actions Docs](https://docs.github.com/en/actions)
-* [Great arcticle on GH Pages deployment](https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
-
-
+- [GH Pages Docs](https://docs.github.com/en/pages/getting-started-with-github-pages)
+- [Vite Docs](https://vitejs.dev/guide/)
+- [GH Actions Docs](https://docs.github.com/en/actions)
+- [Great arcticle on GH Pages deployment](https://dev.to/shashannkbawa/deploying-vite-app-to-github-pages-3ane)
 
 ## Contributers
 
-|                | GitHub                                             | LinkedIn                                                     |
-| -------------- | -------------------------------------------------- | ------------------------------------------------------------ |
-| Justin Snider  | [@sniderjustin](https://github.com/sniderjustin)   | [@sniderj](https://www.linkedin.com/in/sniderj/)             |
+|                | GitHub                                             | LinkedIn                                                       |
+| -------------- | -------------------------------------------------- | -------------------------------------------------------------- |
+| Justin Snider  | [@sniderjustin](https://github.com/sniderjustin)   | [@sniderj](https://www.linkedin.com/in/sniderj/)               |
 | Chihiro Snider | [@cheesehero112](https://github.com/cheesehero112) | [@chihiro-snider](https://www.linkedin.com/in/chihiro-snider/) |
-
