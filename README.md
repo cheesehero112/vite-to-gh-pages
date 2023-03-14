@@ -1,5 +1,7 @@
 # vite-to-gh-pages
 
+![vite-to-gh-pages-screenshot](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dfZSHh-ZXVuLvbS_3IfR2A.png)
+
 ## Introduction
 
 In this repo, we explain how to deploy a Vite React application created with a CICD pipeline. [A Medium article](https://chihiro-and-justin.medium.com/deploy-a-react-vite-app-using-github-actions-and-github-pages-a370df30da97) is also available.
