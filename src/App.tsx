@@ -41,7 +41,9 @@ function App() {
       </section>
       <section className='medium-article'>
         <h3>Learn how to deploy this site: </h3>
-        <a>Medium Article by Chihiro & Justin</a>
+        <a href='https://medium.com/@chihiro-and-justin/deploy-a-react-vite-app-using-github-actions-and-github-pages-a370df30da97'>
+          Medium Article by Chihiro & Justin
+        </a>
       </section>
 
       <div className='card'>
